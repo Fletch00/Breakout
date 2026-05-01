@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpdl21f3syivh"]
+
+[sub_resource type="GDScript" id="GDScript_uj6uw"]
+script/source = "extends Node
+
+var wonLvl = []"
+
+[node name="Save" type="Node"]
+script = SubResource("GDScript_uj6uw")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://8bwb4c1bax8g"]
+
+[ext_resource type="Script" uid="uid://bjvjqyfthn712" path="res://levelScript.gd" id="1_6wstq"]
+[ext_resource type="PackedScene" uid="uid://jlt77d8un4m6" path="res://main.tscn" id="2_nurfk"]
+[ext_resource type="PackedScene" uid="uid://b6uxbk3m0iq4f" path="res://blocks.tscn" id="3_u55s0"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_6wstq")
+ID = "b3"
+
+[node name="Main" parent="." instance=ExtResource("2_nurfk")]
+
+[node name="BlockCounter" type="Node" parent="."]
+
+[node name="Blocks43" parent="BlockCounter" instance=ExtResource("3_u55s0")]
+position = Vector2(577, 123)

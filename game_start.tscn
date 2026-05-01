@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbxy1baourhek"]
+
+[ext_resource type="Script" uid="uid://d4i6df70qc4y3" path="res://game_start.gd" id="1_sn725"]
+
+[node name="Game_Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sn725")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="b3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "DevDebug
+"
+
+[node name="b1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Level 1"
+
+[node name="b2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Level 2"
+
+[node name="saveTime" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Save Game"
+
+[connection signal="pressed" from="HBoxContainer/b3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/b1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/b2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/saveTime" to="." method="_on_save_time_pressed"]

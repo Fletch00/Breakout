@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://jlt77d8un4m6"]
+
+[ext_resource type="PackedScene" uid="uid://c61y36lbla168" path="res://player.tscn" id="1_ig7tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(76, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(1211, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(1202, 133)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(579, 598)
+
+[node name="L Wall" type="StaticBody2D" parent="."]
+position = Vector2(-23, 0)
+collision_layer = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="L Wall"]
+position = Vector2(-15, 323.5)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="R Wall" type="StaticBody2D" parent="."]
+position = Vector2(1205, 0)
+collision_layer = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R Wall"]
+position = Vector2(-15, 323.5)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Ceilling" type="StaticBody2D" parent="."]
+position = Vector2(10, -10)
+collision_layer = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceilling"]
+position = Vector2(568.5, -32.5)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Floor" type="Area2D" parent="."]
+position = Vector2(0, 709)
+collision_mask = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(576, 5.5)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[connection signal="body_entered" from="Floor" to="Player" method="_on_floor_body_entered"]
